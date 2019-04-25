@@ -1,11 +1,21 @@
 image: alpine:latest
 
 variables:
+  DOCKER_DRIVER: overlay2
+  GIT_STRATEGY: clone
 
-build:
+stages:
+  - build
+  # - deploy
+
+build_container:
+  stage: build
+  services:
+    - docker:dind
   script:
-  - hostname
-  only:
-  - master
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
   tags:
-  - home
+    - home
+
