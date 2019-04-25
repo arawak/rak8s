@@ -1,0 +1,11 @@
+image: alpine:latest
+
+variables:
+
+build:
+  script:
+  - hostname
+  only:
+  - master
+  tags:
+  - home
