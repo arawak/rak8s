@@ -6,7 +6,7 @@ variables:
 
 stages:
   - build
-  # - deploy
+  - deploy
 
 build_container:
   stage: build
