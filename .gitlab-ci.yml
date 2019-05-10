@@ -20,4 +20,11 @@ build_container:
     - home
   when: manual
 
-
+deploy_rak8s:
+  stage: deploy
+  image: $CI_REGISTRY_IMAGE:latest
+  script:
+    - echo "hello world"
+    - ansible --version
+  tags:
+    - home
