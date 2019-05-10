@@ -1,13 +1,8 @@
-[dev]
-rak8s000    ansible_host=192.168.86.200
-rak8s001    ansible_host=192.168.86.201
-rak8s002    ansible_host=192.168.86.202
-
 [prod]
-rak8s003    ansible_host=192.168.86.203
-rak8s004    ansible_host=192.168.86.204
-rak8s005    ansible_host=192.168.86.205
+pi01    ansible_host=10.3.0.11
+pi02    ansible_host=10.3.0.12
+pi03    ansible_host=10.3.0.13
+pi04    ansible_host=10.3.0.14
 
 [master]
-rak8s000
-rak8s003
+pi01
