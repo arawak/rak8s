@@ -18,6 +18,6 @@ build_container:
     - docker push $CI_REGISTRY_IMAGE
   tags:
     - home
-  when:
-    - manual
+  when: manual
+
 
