@@ -24,7 +24,7 @@ deploy_rak8s:
   stage: deploy
   image: $CI_REGISTRY_IMAGE:latest
   script:
-    - echo "hello world"
-    - ansible --version
+    - echo $PRIV_KEY >> id_rsa_rak8s && chmod 600 id_rsa_rak8s
+    - ansible --private-key=id_ras_rak8s -m ping all
   tags:
     - home
